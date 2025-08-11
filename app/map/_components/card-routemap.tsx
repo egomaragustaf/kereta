@@ -1,0 +1,37 @@
+"use client";
+
+import { useGetRouteMap } from "@/app/hooks/useRouteMap";
+import { Card } from "@/components/ui/card";
+import { Skeleton } from "@/components/ui/skeleton";
+import Image from "next/image";
+
+export function CardRouteMap() {
+  const { data: routemaps, isLoading } = useGetRouteMap();
+
+  return (
+    <ul className="flex w-full flex-col gap-2">
+      {isLoading && (
+        <li>
+          <Card>
+            <Skeleton className="w-full h-[500px]" />
+          </Card>
+        </li>
+      )}
+      {routemaps &&
+        routemaps.map((routemap) => (
+          <li key={routemap.permalink}>
+            <Card>
+              <Image
+                src={routemap.permalink.replace("http://", "https://")}
+                alt={`Area ${routemap.area}`}
+                width={0}
+                height={0}
+                style={{ width: "100%", height: "auto" }}
+                sizes="100vw"
+              />
+            </Card>
+          </li>
+        ))}
+    </ul>
+  );
+}
