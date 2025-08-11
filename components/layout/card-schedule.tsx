@@ -43,7 +43,7 @@ export function CardSchedule({ item }: CardScheduleProps) {
           </div>
 
           <div className="flex items-center space-x-2 flex-shrink-0">
-            <Button size="sm" variant="outline">
+            <Button size="sm" variant="outline" asChild>
               <Link href={`/train/${item.train_id}`}>
                 <ChevronRight />
               </Link>

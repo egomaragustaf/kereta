@@ -11,12 +11,19 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Loader } from "lucide-react";
 
 export function TrainSchedule({ trainId }: { trainId: string }) {
-  const { data: train, error, isLoading } = useGetTrainSchedule(trainId);
+  const { data: train, isLoading } = useGetTrainSchedule(trainId);
 
   return (
     <ul className="flex w-full flex-col gap-2">
+      {isLoading && (
+        <article className="flex w-full items-center justify-center min-h-[350px]">
+          <Loader className="animate-spin" size={60} />
+        </article>
+      )}
+
       {train &&
         train.map((item) => (
           <li key={item.time_est}>

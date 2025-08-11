@@ -27,10 +27,8 @@ export function CardRouteMap() {
                 <Image
                   src={imageUrl}
                   alt={`Area ${routemap.area}`}
-                  width={0}
-                  height={0}
-                  style={{ width: "100%", height: "auto" }}
-                  sizes="100vw"
+                  width={500}
+                  height={500}
                 />
               </Card>
             </li>
