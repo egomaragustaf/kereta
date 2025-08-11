@@ -18,20 +18,24 @@ export function CardRouteMap() {
         </li>
       )}
       {routemaps &&
-        routemaps.map((routemap) => (
-          <li key={routemap.permalink}>
-            <Card>
-              <Image
-                src={routemap.permalink.replace("http://", "https://")}
-                alt={`Area ${routemap.area}`}
-                width={0}
-                height={0}
-                style={{ width: "100%", height: "auto" }}
-                sizes="100vw"
-              />
-            </Card>
-          </li>
-        ))}
+        routemaps.map((routemap) => {
+          const imageUrl = routemap.permalink.replace("http://", "https://");
+
+          return (
+            <li key={routemap.permalink}>
+              <Card>
+                <Image
+                  src={imageUrl}
+                  alt={`Area ${routemap.area}`}
+                  width={0}
+                  height={0}
+                  style={{ width: "100%", height: "auto" }}
+                  sizes="100vw"
+                />
+              </Card>
+            </li>
+          );
+        })}
     </ul>
   );
 }

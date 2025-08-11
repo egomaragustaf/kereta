@@ -34,6 +34,7 @@ export function CardSchedule({ item }: CardScheduleProps) {
           <div className="flex-1 mx-6 min-w-0">
             <div className="flex items-center justify-between mb-1">
               <h3 className="font-semibold truncate">{item.dest}</h3>
+              <h4 className="font-semibold">{item.time_est}</h4>
             </div>
 
             <div className="flex items-center text-sm text-gray-600 mb-2">
@@ -42,7 +43,6 @@ export function CardSchedule({ item }: CardScheduleProps) {
           </div>
 
           <div className="flex items-center space-x-2 flex-shrink-0">
-            <h4 className="font-semibold">{item.time_est}</h4>
             <Button size="sm" variant="outline">
               <Link href={`/train/${item.train_id}`}>
                 <ChevronRight />
