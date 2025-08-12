@@ -28,7 +28,7 @@ export default function FarePage() {
   };
 
   return (
-    <section className="mx-auto flex w-full max-w-[500px] flex-col gap-0">
+    <section className="relative flex flex-col h-screen">
       <article className="flex w-full items-center justify-between py-4">
         <h1>FARE</h1>
       </article>

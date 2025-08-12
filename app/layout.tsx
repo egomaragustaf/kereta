@@ -29,7 +29,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Providers>
-          <main className="min-w-screen flex min-h-screen flex-col pb-32 p-2 font-mono">
+          <main className="container mx-auto max-w-md relative bg-white h-[100vh]">
             {children}
             <Navbar />
           </main>
