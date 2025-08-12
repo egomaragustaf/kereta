@@ -7,7 +7,7 @@ export default async function MapPage() {
         <h1>MAP</h1>
       </article>
 
-      <article className="flex w-full items-center justify-center">
+      <article className="flex w-full items-center justify-center pb-32">
         <CardRouteMap />
       </article>
     </section>

@@ -32,7 +32,7 @@ export function CardSearchStations({
   isLoading,
 }: CardSearchStationsProps) {
   return (
-    <section className="relative flex flex-col h-screen">
+    <section className="absolute top-16 z-50 w-full">
       <Card>
         <CardHeader>
           <CardTitle>Where will you go today?</CardTitle>

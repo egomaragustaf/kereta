@@ -62,7 +62,7 @@ export default function Home() {
         </article>
       )}
 
-      <article className="grid w-full grid-cols-1 gap-2">
+      <article className="grid w-full grid-cols-1 gap-2 pb-32">
         {schedule &&
           schedule.data.map((item) => (
             <CardSchedule key={item.train_id} item={item} />

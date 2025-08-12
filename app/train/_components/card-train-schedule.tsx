@@ -17,7 +17,7 @@ export function TrainSchedule({ trainId }: { trainId: string }) {
   const { data: train, isLoading } = useGetTrainSchedule(trainId);
 
   return (
-    <ul className="flex w-full flex-col gap-2">
+    <ul className="flex w-full flex-col gap-2 pb-32">
       {isLoading && (
         <article className="flex w-full items-center justify-center min-h-[350px]">
           <Loader className="animate-spin" size={60} />
