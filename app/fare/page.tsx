@@ -4,7 +4,7 @@ import * as React from "react";
 
 import { CardSearchFare } from "@/components/layout/card-search-fare";
 import { useTicketPrice } from "../hooks/useTicketPrice";
-import { Loader } from "lucide-react";
+import { Loader, Tickets } from "lucide-react";
 
 export default function FarePage() {
   const [formStation, setFormStation] = React.useState({
@@ -41,10 +41,15 @@ export default function FarePage() {
       />
 
       <article className="flex w-full items-center justify-center min-h-[350px]">
-        {isPending ? (
-          <Loader className="animate-spin" size={60} />
-        ) : (
-          <h3>{ticket?.data[0].fare}</h3>
+        {isPending && <Loader className="animate-spin" size={60} />}
+
+        {ticket && (
+          <div className="flex items-center justify-center gap-2">
+            <Tickets size={50} />
+            <h3 className="font-semibold text-4xl">
+              Rp. {ticket?.data[0].fare.toLocaleString("id-ID")}
+            </h3>
+          </div>
         )}
       </article>
     </section>
